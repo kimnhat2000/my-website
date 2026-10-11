@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nhat Nguyen | About me &amp; projects</title>
+  <meta name="description" content="Hi, I'm Nhat Nguyen. A personal site with a short bio, my projects and apps, and ways to get in touch.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+  <style>
+:root {
+  --cream: #fff7ea;
+  --sand: #f6e7d0;
+  --ink: #3a2a22;
+  --muted: #75625a;
+  --terra: #d8663c;
+  --terra-dark: #b94f28;
+  --sage: #7c9a82;
+  --sage-dark: #4f6f58;
+  --sun: #f6b93b;
+  --white: #fffdf9;
+  --radius: 20px;
+  --shadow: 0 10px 30px rgba(90, 55, 30, 0.12);
+  --font-body: "DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; margin: 0 0 .5em; }
+h1 { font-size: clamp(2.4rem, 5.5vw, 4.2rem); letter-spacing: -0.02em; }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); }
+p { margin: 0 0 1em; }
+ul { list-style: none; margin: 0; padding: 0; }
+
+.container { width: min(1120px, 100% - 2.5rem); margin-inline: auto; }
+.muted { color: var(--muted); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.skip-link { position: absolute; left: 1rem; top: -4rem; background: var(--ink); color: #fff; padding: .6rem 1rem; border-radius: 8px; z-index: 100; }
+.skip-link:focus { top: 1rem; }
+:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; }
+
+/* Buttons */
+.btn {
+  display: inline-block; border: 2px solid var(--terra-dark); background: var(--terra-dark); color: #fff;
+  padding: .8rem 1.5rem; border-radius: 999px; font: 700 1rem var(--font-body);
+  text-decoration: none; cursor: pointer; transition: transform .15s, background .15s, box-shadow .15s;
+}
+.btn:hover { background: var(--ink); border-color: var(--ink); transform: translateY(-2px); box-shadow: var(--shadow); }
+.btn-ghost { background: transparent; color: var(--terra-dark); }
+.btn-small { padding: .5rem 1.1rem; font-size: .95rem; }
+
+/* Header */
+.site-header { position: sticky; top: 0; z-index: 50; background: rgba(255, 247, 234, .92); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(58, 42, 34, .08); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; min-height: 72px; gap: 1rem; }
+.brand { display: flex; align-items: center; gap: .65rem; text-decoration: none; }
+.brand-mark { width: 36px; height: 36px; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+.brand-text strong { font-family: var(--font-display); font-size: 1.2rem; }
+.brand-text small { color: var(--muted); font-size: .78rem; }
+.primary-nav { display: flex; align-items: center; gap: 1.5rem; }
+.primary-nav ul { display: flex; gap: 1.5rem; }
+.primary-nav ul a { text-decoration: none; font-weight: 500; padding: .35rem 0; border-bottom: 2px solid transparent; }
+.primary-nav ul a:hover { border-color: var(--terra); }
+.nav-toggle { display: none; background: none; border: 0; padding: .6rem; cursor: pointer; }
+.bars, .bars::before, .bars::after { display: block; width: 24px; height: 2px; background: var(--ink); border-radius: 2px; position: relative; transition: transform .2s; }
+.bars::before, .bars::after { content: ""; position: absolute; left: 0; }
+.bars::before { top: -7px; } .bars::after { top: 7px; }
+.nav-toggle[aria-expanded="true"] .bars { background: transparent; }
+.nav-toggle[aria-expanded="true"] .bars::before { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .bars::after { transform: translateY(-7px) rotate(-45deg); }
+
+/* Hero */
+.hero { position: relative; overflow: hidden; padding: clamp(2.5rem, 6vw, 5rem) 0 clamp(3rem, 7vw, 6rem); background: radial-gradient(circle at 85% 10%, #ffe3b8 0, transparent 45%), radial-gradient(circle at 5% 90%, #e5efdf 0, transparent 40%), var(--cream); }
+.hero-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(2rem, 5vw, 4rem); align-items: center; }
+.pill { display: inline-block; background: var(--sand); color: var(--terra-dark); font-weight: 700; font-size: .85rem; padding: .35rem .9rem; border-radius: 999px; margin-bottom: 1.2rem; }
+h1 em { font-style: italic; color: var(--terra-dark); }
+.lead { font-size: 1.15rem; color: var(--muted); max-width: 34rem; }
+.cta-row { display: flex; flex-wrap: wrap; gap: .8rem; margin: 1.6rem 0; }
+.hero-points { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; font-size: .92rem; color: var(--sage-dark); font-weight: 500; }
+.hero-points li::before { content: "\2713\00a0"; font-weight: 700; }
+.hero-art { position: relative; }
+.hero-image { aspect-ratio: 1 / 1; border-radius: 999px 999px 28px 28px; overflow: hidden; box-shadow: var(--shadow); border: 6px solid var(--white); }
+.hero-image svg { width: 100%; height: 100%; }
+.float-card { position: absolute; left: -1.2rem; bottom: 2rem; display: flex; align-items: center; gap: .7rem; background: var(--white); padding: .8rem 1.1rem; border-radius: 16px; box-shadow: var(--shadow); }
+.float-card small { display: block; color: var(--muted); line-height: 1.2; }
+.float-card strong { line-height: 1.2; display: block; }
+.float-card .dot { width: 12px; height: 12px; border-radius: 50%; background: var(--sage); box-shadow: 0 0 0 5px rgba(124, 154, 130, .3); }
+
+/* Sections */
+.section { padding: clamp(3rem, 7vw, 6rem) 0; }
+.section-warm { background: var(--sand); }
+.section-head { max-width: 40rem; margin-bottom: 1.5rem; }
+.eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .8rem; font-weight: 700; color: var(--terra-dark); margin-bottom: .6rem; }
+
+/* Projects */
+.filters { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.8rem; }
+.chip { border: 2px solid var(--sand); background: var(--white); color: var(--ink); padding: .45rem 1.1rem; border-radius: 999px; font: 500 .95rem var(--font-body); cursor: pointer; transition: all .15s; }
+.chip:hover { border-color: var(--sage); }
+.chip.is-active { background: var(--sage-dark); border-color: var(--sage-dark); color: #fff; }
+.project-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.6rem; }
+.card { background: var(--white); border-radius: var(--radius); box-shadow: var(--shadow); }
+.project { overflow: hidden; display: flex; flex-direction: column; transition: transform .2s, box-shadow .2s; }
+.project:hover { transform: translateY(-5px); box-shadow: 0 16px 36px rgba(90, 55, 30, .18); }
+.project-img { position: relative; aspect-ratio: 4 / 3; }
+.project-img svg { width: 100%; height: 100%; }
+.badge { position: absolute; top: .8rem; left: .8rem; background: var(--white); color: var(--terra-dark); font-weight: 700; font-size: .78rem; padding: .25rem .7rem; border-radius: 999px; }
+.project-body { padding: 1.2rem 1.3rem 1.4rem; display: flex; flex-direction: column; gap: .15rem; flex: 1; }
+.project-title { font-size: 1.4rem; margin: 0 0 .3rem; }
+.project-desc { color: var(--muted); margin: 0 0 .9rem; }
+.tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1.1rem; }
+.tags li, .skills li { background: var(--sand); color: var(--sage-dark); font-size: .82rem; font-weight: 700; padding: .2rem .7rem; border-radius: 999px; }
+.project-links { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: auto; }
+.callout { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem 2rem; margin-top: 2.5rem; padding: 1.5rem 1.8rem; background: var(--sand); border-radius: var(--radius); }
+.callout h3 { font-size: 1.25rem; margin: 0 0 .25rem; }
+.callout p { margin: 0; color: var(--muted); }
+.skills { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.2rem 0 1.6rem; }
+.skills li { background: var(--white); }
+.fine-print { font-size: .8rem; color: var(--muted); margin-top: 1.8rem; }
+
+/* About */
+.about-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.portrait { aspect-ratio: 4 / 5; border-radius: 200px 200px 24px 24px; overflow: hidden; border: 6px solid var(--white); box-shadow: var(--shadow); }
+.portrait svg { width: 100%; height: 100%; }
+
+/* Contact */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.contact-list { margin-top: 1.5rem; display: grid; gap: .8rem; }
+.contact-list li { display: flex; flex-direction: column; }
+.label { font-size: .78rem; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); font-weight: 700; }
+.contact-list a { text-underline-offset: 3px; }
+.form { padding: clamp(1.4rem, 3vw, 2.2rem); display: grid; gap: 1.1rem; }
+.field label { display: block; font-weight: 700; margin-bottom: .3rem; }
+.field input, .field textarea { width: 100%; padding: .75rem .9rem; font: inherit; color: var(--ink); background: var(--cream); border: 2px solid var(--sand); border-radius: 12px; }
+.field input:focus, .field textarea:focus { border-color: var(--sage-dark); outline: none; box-shadow: 0 0 0 3px rgba(124, 154, 130, .35); }
+.field [aria-invalid="true"] { border-color: #b3261e; }
+.error { color: #b3261e; font-size: .85rem; margin: .3rem 0 0; min-height: 0; }
+.form .btn { justify-self: start; }
+.form-status { margin: 0; color: var(--sage-dark); font-weight: 500; }
+
+/* Footer */
+.site-footer { background: var(--ink); color: #f1e4d2; padding: 3rem 0 1.5rem; }
+.footer-inner { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 2rem; }
+.footer-name { font: 700 1.4rem var(--font-display); color: #fff; }
+.site-footer ul { display: grid; gap: .3rem; }
+.site-footer a { text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
+.copyright { margin-top: 2rem; padding-top: 1.2rem; border-top: 1px solid rgba(255, 255, 255, .15); font-size: .85rem; color: #cdbba5; }
+
+/* Reveal on scroll (JS only) */
+.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+.js .reveal.is-visible { opacity: 1; transform: none; }
+
+/* Responsive */
+@media (max-width: 860px) {
+  .nav-toggle { display: block; }
+  .primary-nav { position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1.2rem 1.25rem 1.6rem; background: var(--cream); border-bottom: 1px solid rgba(58, 42, 34, .1); display: none; }
+  .primary-nav.is-open { display: flex; }
+  .primary-nav ul { flex-direction: column; gap: .6rem; }
+  .hero-grid, .about-grid, .contact-grid, .footer-inner { grid-template-columns: 1fr; }
+  .hero-art { max-width: 460px; }
+  .float-card { left: .5rem; }
+  .portrait { max-width: 320px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  .js .reveal { opacity: 1; transform: none; }
+}
+
+</style>
+  <script>document.documentElement.classList.add('js');</script>
+  
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Nhat Nguyen - home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#D8663C"/><path d="M10 23V9l12 14V9" fill="none" stroke="#FFF7EA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="brand-text"><strong>Nhat Nguyen</strong><small>Developer &middot; Maker</small></span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Menu</span>
+        <span class="bars" aria-hidden="true"></span>
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a class="btn btn-small" href="realtor/index.html">Realtor site &rarr;</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="pill">Developer &middot; Maker &middot; Lifelong learner</p>
+          <h1>Hi, I&rsquo;m Nhat. I build <em>friendly</em> software.</h1>
+          <p class="lead">Welcome to my corner of the internet. Here you&rsquo;ll find a few of my projects and apps, a little about me, and an easy way to say hi.</p>
+          <div class="cta-row">
+            <a class="btn" href="#projects">See my projects</a>
+            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          </div>
+          <ul class="hero-points">
+            <li>Clean, accessible code</li>
+            <li>Curious by nature</li>
+            <li>Always shipping</li>
+          </ul>
+        </div>
+        <div class="hero-art">
+          <div id="hero-image" class="hero-image" role="img" aria-label="Illustration of a smiling person with glasses working at a laptop">
+            <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+              <rect width="400" height="400" fill="#FFE3B8"/>
+              <circle cx="200" cy="175" r="140" fill="#FFF3DC"/>
+              <circle cx="330" cy="80" r="26" fill="#FFE08A"/>
+              <!-- plant -->
+              <path d="M62 330c-14-34-10-62 6-84 8 30 12 54-6 84zM62 330c16-26 36-40 58-44-6 28-26 44-58 44z" fill="#6E8F72"/>
+              <rect x="44" y="326" width="38" height="46" rx="8" fill="#D8663C"/>
+              <!-- body -->
+              <path d="M78 400c0-84 52-124 122-124s122 40 122 124z" fill="#7C9A82"/>
+              <path d="M178 280l22 36 22-36" fill="none" stroke="#4F6F58" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+              <rect x="180" y="238" width="40" height="46" rx="14" fill="#D9A57A"/>
+              <!-- head -->
+              <ellipse cx="200" cy="196" rx="52" ry="58" fill="#E9B98F"/>
+              <path d="M146 190c-6-58 44-76 78-64 32 10 40 42 30 68-10-24-26-34-54-34-26 0-44 10-54 30z" fill="#2E211B"/>
+              <circle cx="181" cy="206" r="14" fill="#fff" fill-opacity=".35" stroke="#3A2A22" stroke-width="3"/>
+              <circle cx="219" cy="206" r="14" fill="#fff" fill-opacity=".35" stroke="#3A2A22" stroke-width="3"/>
+              <path d="M195 205h10" stroke="#3A2A22" stroke-width="3" stroke-linecap="round"/>
+              <circle cx="181" cy="206" r="4" fill="#2E211B"/><circle cx="219" cy="206" r="4" fill="#2E211B"/>
+              <path d="M184 232q16 14 32 0" fill="none" stroke="#8A4B3A" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="164" cy="228" r="7" fill="#E58A6B" opacity=".45"/><circle cx="236" cy="228" r="7" fill="#E58A6B" opacity=".45"/>
+              <!-- laptop -->
+              <rect x="104" y="318" width="192" height="92" rx="12" fill="#3A2A22"/>
+              <circle cx="200" cy="356" r="12" fill="#F6B93B"/>
+              <!-- floating chips -->
+              <g font-family="monospace" font-weight="700" font-size="20" text-anchor="middle">
+                <rect x="288" y="118" width="72" height="40" rx="12" fill="#FFFDF9"/><text x="324" y="145" fill="#B94F28">&lt;/&gt;</text>
+                <rect x="40" y="130" width="64" height="40" rx="12" fill="#FFFDF9"/><text x="72" y="157" fill="#4F6F58">{ }</text>
+              </g>
+            </svg>
+          </div>
+          <div class="float-card" aria-hidden="true">
+            <span class="dot"></span>
+            <div><strong>Open to new projects</strong><small>Say hi anytime</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Projects &amp; apps</p>
+          <h2>Things I&rsquo;ve built</h2>
+          <p class="muted">A sample of side projects, apps and tools.</p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filter projects by type">
+          <button class="chip is-active" data-filter="all" aria-pressed="true">All</button>
+          <button class="chip" data-filter="web" aria-pressed="false">Web apps</button>
+          <button class="chip" data-filter="mobile" aria-pressed="false">Mobile</button>
+          <button class="chip" data-filter="tools" aria-pressed="false">Tools</button>
+        </div>
+        <p id="result-count" class="sr-only" aria-live="polite"></p>
+
+        <div id="project-grid" class="project-grid"></div>
+        <p class="fine-print">Sample projects with generated illustrations. The links are placeholders, so replace them with your real demos and repositories.</p>
+
+        <aside class="callout" aria-labelledby="realtor-callout-title">
+          <div>
+            <h3 id="realtor-callout-title">Also: a realtor website demo</h3>
+            <p>A cozy, single-page site I designed for an individual realtor in London, Ontario.</p>
+          </div>
+          <a class="btn" href="realtor/index.html">View the realtor site</a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section section-warm">
+      <div class="container about-grid">
+        <div class="about-art">
+          <div class="portrait" role="img" aria-label="Portrait illustration of Nhat Nguyen">
+            <svg viewBox="0 0 200 200" aria-hidden="true">
+              <rect width="200" height="200" fill="#F6E7D0"/>
+              <circle cx="100" cy="82" r="38" fill="#E9B98F"/>
+              <path d="M58 78c2-34 30-48 56-42 22 5 30 24 28 42-8-14-20-22-42-22s-36 8-42 22z" fill="#2E211B"/>
+              <circle cx="87" cy="86" r="9" fill="#fff" fill-opacity=".35" stroke="#3A2A22" stroke-width="2"/>
+              <circle cx="113" cy="86" r="9" fill="#fff" fill-opacity=".35" stroke="#3A2A22" stroke-width="2"/>
+              <path d="M96 85h8" stroke="#3A2A22" stroke-width="2"/>
+              <path d="M90 102q10 9 20 0" fill="none" stroke="#8A4B3A" stroke-width="3" stroke-linecap="round"/>
+              <path d="M30 200c4-46 36-66 70-66s66 20 70 66z" fill="#7C9A82"/>
+              <path d="M84 134l16 22 16-22z" fill="#FFF7EA"/>
+            </svg>
+          </div>
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow">About</p>
+          <h2>A little about me</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio, nullam varius turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.</p>
+          <ul class="skills" aria-label="Skills and tools">
+            <li>HTML &amp; CSS</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Node.js</li><li>UI design</li>
+          </ul>
+          <a class="btn" href="#contact">Let&rsquo;s talk</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Say hello</h2>
+          <p class="muted">Have a question, an idea or a project in mind? Send me a note and I&rsquo;ll get back to you soon.</p>
+          <ul class="contact-list">
+            <li><span class="label">Email</span><a href="mailto:hello@example.com">hello@example.com</a></li>
+            <li><span class="label">GitHub</span><a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">github.com/your-username<span class="sr-only"> (opens in a new tab)</span></a></li>
+            <li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/your-username" target="_blank" rel="noopener noreferrer">linkedin.com/in/your-username<span class="sr-only"> (opens in a new tab)</span></a></li>
+          </ul>
+        </div>
+
+        <form id="contact-form" class="card form" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+            <p class="error" data-error-for="name"></p>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+            <p class="error" data-error-for="email"></p>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <p class="error" data-error-for="message"></p>
+          </div>
+          <button class="btn" type="submit">Send message</button>
+          <p id="form-status" class="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong class="footer-name">Nhat Nguyen</strong>
+        <p>Developer &middot; Maker &middot; Lifelong learner</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <ul>
+        <li><a href="https://github.com/your-username" target="_blank" rel="noopener noreferrer">GitHub<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a href="https://www.linkedin.com/in/your-username" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (opens in a new tab)</span></a></li>
+        <li><a href="mailto:hello@example.com">hello@example.com</a></li>
+        <li><a href="realtor/index.html">Realtor site demo</a></li>
+      </ul>
+    </div>
+    <p class="container copyright">&copy; <span id="year">2026</span> Nhat Nguyen. All rights reserved.</p>
+  </footer>
+<script>
+'use strict';
+
+/* ---------- Sample projects (all names and links are placeholders) ---------- */
+const PROJECTS = [
+  { id: 1, name: 'TaskNest',     category: 'web',    kind: 'web',    badge: 'New',
+    desc: 'A calm to-do app with boards, reminders and keyboard shortcuts.',
+    tags: ['React', 'Node.js'], bg: '#CDE8F2', accent: '#D8663C',
+    demo: 'https://example.com/tasknest', code: 'https://github.com/your-username/tasknest' },
+  { id: 2, name: 'PocketBudget', category: 'mobile', kind: 'mobile', badge: '',
+    desc: 'Track spending on the go and see where your money goes each month.',
+    tags: ['React Native', 'SQLite'], bg: '#FFE3B8', accent: '#4F6F58',
+    demo: 'https://example.com/pocketbudget', code: 'https://github.com/your-username/pocketbudget' },
+  { id: 3, name: 'Notely',       category: 'web',    kind: 'web',    badge: '',
+    desc: 'A distraction-free notes app with markdown and instant search.',
+    tags: ['TypeScript', 'Markdown'], bg: '#E5EFDF', accent: '#B94F28',
+    demo: 'https://example.com/notely', code: 'https://github.com/your-username/notely' },
+  { id: 4, name: 'TrailMix',     category: 'mobile', kind: 'mobile', badge: 'Popular',
+    desc: 'Log hikes, save favourite trails and share routes with friends.',
+    tags: ['Swift', 'Maps'], bg: '#F3D9C6', accent: '#2F6F6B',
+    demo: 'https://example.com/trailmix', code: 'https://github.com/your-username/trailmix' },
+  { id: 5, name: 'QuickLinks',   category: 'tools',  kind: 'tools',  badge: '',
+    desc: 'A tiny command-line tool that shortens and organizes your links.',
+    tags: ['Node.js', 'CLI'], bg: '#EADFF0', accent: '#D8663C',
+    demo: 'https://example.com/quicklinks', code: 'https://github.com/your-username/quicklinks' },
+  { id: 6, name: 'JSON Pal',     category: 'tools',  kind: 'tools',  badge: '',
+    desc: 'Format, validate and explore JSON right in your browser.',
+    tags: ['JavaScript', 'Web'], bg: '#D6ECF5', accent: '#4F6F58',
+    demo: 'https://example.com/json-pal', code: 'https://github.com/your-username/json-pal' }
+];
+
+/* ---------- Generated app illustrations (inline SVG) ---------- */
+function appSVG(o) {
+  const ink = '#3A2A22', paper = '#FFFDF9', line = '#E6D8C3';
+  let art;
+
+  if (o.kind === 'web') {
+    const rows = [118, 148, 178].map((y, i) =>
+      `<circle cx="146" cy="${y + 6}" r="6" fill="${o.accent}" ${i === 1 ? 'opacity=".35"' : ''}/>` +
+      `<rect x="160" y="${y}" width="${150 - i * 22}" height="12" rx="6" fill="${line}"/>`).join('');
+    art = `<rect x="50" y="45" width="300" height="210" rx="14" fill="${paper}"/>
+      <path d="M50 59a14 14 0 0 1 14-14h272a14 14 0 0 1 14 14v14H50z" fill="#F1E6D6"/>
+      <circle cx="68" cy="59" r="4" fill="#E58A6B"/><circle cx="82" cy="59" r="4" fill="#F6B93B"/><circle cx="96" cy="59" r="4" fill="#7C9A82"/>
+      <rect x="50" y="73" width="70" height="182" fill="${o.accent}" fill-opacity=".14"/>
+      <rect x="62" y="90" width="46" height="9" rx="4.5" fill="${o.accent}"/>
+      <rect x="62" y="110" width="40" height="8" rx="4" fill="${ink}" fill-opacity=".25"/>
+      <rect x="62" y="128" width="44" height="8" rx="4" fill="${ink}" fill-opacity=".25"/>
+      <rect x="136" y="88" width="110" height="14" rx="7" fill="${ink}"/>
+      ${rows}
+      <rect x="136" y="212" width="76" height="26" rx="13" fill="${o.accent}"/>`;
+  } else if (o.kind === 'mobile') {
+    const items = [112, 156, 200].map(y =>
+      `<rect x="158" y="${y}" width="84" height="34" rx="10" fill="#F6EEE2"/>
+       <circle cx="174" cy="${y + 17}" r="8" fill="${o.accent}" fill-opacity=".8"/>
+       <rect x="188" y="${y + 9}" width="40" height="7" rx="3.5" fill="${ink}" fill-opacity=".7"/>
+       <rect x="188" y="${y + 21}" width="26" height="6" rx="3" fill="${ink}" fill-opacity=".25"/>`).join('');
+    art = `<rect x="52" y="96" width="76" height="44" rx="12" fill="${paper}" fill-opacity=".92"/>
+      <rect x="62" y="108" width="40" height="8" rx="4" fill="${o.accent}"/><rect x="62" y="124" width="28" height="6" rx="3" fill="${line}"/>
+      <rect x="272" y="170" width="76" height="44" rx="12" fill="${paper}" fill-opacity=".92"/>
+      <circle cx="292" cy="192" r="10" fill="${o.accent}" fill-opacity=".8"/><rect x="308" y="186" width="28" height="7" rx="3.5" fill="${line}"/>
+      <rect x="138" y="22" width="124" height="256" rx="26" fill="${ink}"/>
+      <rect x="146" y="34" width="108" height="232" rx="18" fill="${paper}"/>
+      <path d="M146 52a18 18 0 0 1 18-18h72a18 18 0 0 1 18 18v36H146z" fill="${o.accent}"/>
+      <rect x="160" y="52" width="50" height="9" rx="4.5" fill="#fff"/><rect x="160" y="68" width="32" height="7" rx="3.5" fill="#fff" fill-opacity=".6"/>
+      ${items}
+      <rect x="180" y="250" width="40" height="5" rx="2.5" fill="${ink}" fill-opacity=".3"/>`;
+  } else {
+    const code = [
+      [70, 120, '#F6B93B'], [90, 80, '#9DBB8C'], [90, 150, '#FFF7EA'],
+      [110, 60, o.accent], [110, 100, '#FFF7EA'], [130, 140, '#9DBB8C'], [150, 90, '#F6B93B']
+    ].map(([y, w, c], i) => `<rect x="${i % 3 === 0 ? 76 : 96}" y="${y + 52}" width="${w}" height="9" rx="4.5" fill="${c}" fill-opacity=".9"/>`).join('');
+    art = `<rect x="45" y="50" width="310" height="200" rx="14" fill="#2B211C"/>
+      <circle cx="66" cy="70" r="4" fill="#E58A6B"/><circle cx="80" cy="70" r="4" fill="#F6B93B"/><circle cx="94" cy="70" r="4" fill="#7C9A82"/>
+      <text x="64" y="106" font-family="monospace" font-size="14" fill="#F6B93B">$ run ${o.name.toLowerCase().replace(/\s+/g, '-')}</text>
+      ${code}
+      <rect x="76" y="214" width="9" height="16" fill="${o.accent}"/>`;
+  }
+
+  return `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="300" fill="${o.bg}"/>
+  <circle cx="340" cy="50" r="46" fill="#fff" fill-opacity=".45"/>
+  <circle cx="50" cy="260" r="64" fill="${o.accent}" fill-opacity=".12"/>
+  ${art}
+</svg>`;
+}
+
+/* ---------- Projects ---------- */
+const grid = document.getElementById('project-grid');
+const countEl = document.getElementById('result-count');
+
+function projectCard(p) {
+  return `<article class="card project reveal">
+    <div class="project-img">${appSVG(p)}${p.badge ? `<span class="badge">${p.badge}</span>` : ''}</div>
+    <div class="project-body">
+      <h3 class="project-title">${p.name}</h3>
+      <p class="project-desc">${p.desc}</p>
+      <ul class="tags" aria-label="Technologies">${p.tags.map(t => `<li>${t}</li>`).join('')}</ul>
+      <div class="project-links">
+        <a class="btn btn-small" href="${p.demo}" target="_blank" rel="noopener noreferrer">Live demo<span class="sr-only"> of ${p.name} (opens in a new tab)</span></a>
+        <a class="btn btn-small btn-ghost" href="${p.code}" target="_blank" rel="noopener noreferrer">Source<span class="sr-only"> code for ${p.name} (opens in a new tab)</span></a>
+      </div>
+    </div>
+  </article>`;
+}
+
+function renderProjects(key = 'all') {
+  const items = PROJECTS.filter(p => key === 'all' || p.category === key);
+  grid.innerHTML = items.map(projectCard).join('');
+  countEl.textContent = `${items.length} ${items.length === 1 ? 'project' : 'projects'} shown`;
+  observeReveals();
+}
+
+document.querySelectorAll('.chip').forEach(chip => {
+  chip.addEventListener('click', () => {
+    document.querySelectorAll('.chip').forEach(c => {
+      const active = c === chip;
+      c.classList.toggle('is-active', active);
+      c.setAttribute('aria-pressed', String(active));
+    });
+    renderProjects(chip.dataset.filter);
+  });
+});
+
+/* ---------- Reveal on scroll ---------- */
+let observer;
+function observeReveals() {
+  const els = document.querySelectorAll('.reveal:not(.is-visible)');
+  if (!('IntersectionObserver' in window)) { els.forEach(el => el.classList.add('is-visible')); return; }
+  observer = observer || new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('is-visible'); observer.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  els.forEach(el => observer.observe(el));
+}
+document.querySelectorAll('.section-head, .about-grid, .contact-grid').forEach(el => el.classList.add('reveal'));
+renderProjects();
+
+/* ---------- Mobile nav ---------- */
+const toggle = document.querySelector('.nav-toggle');
+const nav = document.getElementById('primary-nav');
+function setNav(open) {
+  nav.classList.toggle('is-open', open);
+  toggle.setAttribute('aria-expanded', String(open));
+}
+toggle.addEventListener('click', () => setNav(toggle.getAttribute('aria-expanded') !== 'true'));
+nav.addEventListener('click', e => { if (e.target.closest('a')) setNav(false); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') setNav(false); });
+
+/* ---------- Contact form (opens visitor's email app; no backend) ---------- */
+const CONTACT_EMAIL = 'hello@example.com'; // TODO: replace with your real address
+const form = document.getElementById('contact-form');
+const status = document.getElementById('form-status');
+const messages = { name: 'Please enter your name.', email: 'Please enter a valid email address.', message: 'Please write a short message.' };
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  let valid = true;
+  ['name', 'email', 'message'].forEach(id => {
+    const input = form.elements[id];
+    const err = form.querySelector(`[data-error-for="${id}"]`);
+    const ok = input.value.trim() !== '' && input.checkValidity();
+    input.setAttribute('aria-invalid', String(!ok));
+    if (!ok) { err.id = `err-${id}`; input.setAttribute('aria-describedby', err.id); } else input.removeAttribute('aria-describedby');
+    err.textContent = ok ? '' : messages[id];
+    valid = valid && ok;
+  });
+  if (!valid) { form.querySelector('[aria-invalid="true"]').focus(); status.textContent = ''; return; }
+
+  const d = new FormData(form);
+  const body = `${d.get('message')}\n\nFrom: ${d.get('name')} (${d.get('email')})`;
+  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent('Hello from ' + d.get('name'))}&body=${encodeURIComponent(body)}`;
+  status.textContent = 'Thanks! Your email app should open with your message ready to send.';
+});
+
+/* ---------- Footer year ---------- */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+</script>
+</body>
+</html>

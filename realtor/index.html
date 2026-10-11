@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quoc Thong | Realtor in London, Ontario</title>
+  <meta name="description" content="Jordan Ellis helps buyers and sellers find warm, welcoming urban homes in London, Ontario.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Jordan Ellis, Realtor - home">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 15 16 4l12 11v13H4z" fill="#D8663C"/><rect x="13" y="18" width="6" height="10" rx="1.5" fill="#FFF7EA"/></svg>
+        <span class="brand-text"><strong>Jordan Ellis</strong><small>Realtor &middot; London, ON</small></span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="primary-nav">
+        <span class="sr-only">Menu</span>
+        <span class="bars" aria-hidden="true"></span>
+      </button>
+
+      <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#listings">Listings</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a class="btn btn-small" href="tel:+15195550142">(519) 555-0142</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="pill">Your London, Ontario Realtor</p>
+          <h1>Find a home that feels like <em>home.</em></h1>
+          <p class="lead">Bright, cozy, walkable city homes for first-time buyers, growing families and anyone who loves a porch light left on.</p>
+          <div class="cta-row">
+            <a class="btn" href="#listings">See latest listings</a>
+            <a class="btn btn-ghost" href="#contact">Say hello</a>
+          </div>
+          <ul class="hero-points">
+            <li>Friendly, no-pressure advice</li>
+            <li>Local neighbourhood know-how</li>
+            <li>One realtor, start to finish</li>
+          </ul>
+        </div>
+        <div class="hero-art">
+          <div id="hero-image" class="hero-image"></div>
+          <div class="float-card" aria-hidden="true">
+            <span class="dot"></span>
+            <div><strong>Open house</strong><small>Sunday, 1&ndash;3 pm</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LISTINGS -->
+    <section id="listings" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Latest listings</p>
+          <h2>Fresh on the market in London</h2>
+          <p class="muted">Sample homes between $400,000 and $700,000.</p>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filter listings by price">
+          <button class="chip is-active" data-filter="all" aria-pressed="true">All</button>
+          <button class="chip" data-filter="under500" aria-pressed="false">Under $500k</button>
+          <button class="chip" data-filter="500to600" aria-pressed="false">$500k&ndash;$600k</button>
+          <button class="chip" data-filter="over600" aria-pressed="false">$600k+</button>
+        </div>
+        <p id="result-count" class="sr-only" aria-live="polite"></p>
+
+        <div id="listing-grid" class="listing-grid"></div>
+        <p class="fine-print">Sample listings with illustrated images, for design purposes only. Replace with your real MLS&reg; data.</p>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section section-warm">
+      <div class="container about-grid">
+        <div class="about-art">
+          <div class="portrait" role="img" aria-label="Portrait placeholder for Jordan Ellis">
+            <svg viewBox="0 0 200 200" aria-hidden="true">
+              <rect width="200" height="200" fill="#F6E7D0"/>
+              <circle cx="100" cy="82" r="38" fill="#E9B98F"/>
+              <path d="M58 78c2-34 30-48 56-42 22 5 30 24 28 42-8-14-20-22-42-22s-36 8-42 22z" fill="#5B3A29"/>
+              <path d="M30 200c4-46 36-66 70-66s66 20 70 66z" fill="#7C9A82"/>
+              <path d="M84 134l16 22 16-22z" fill="#FFF7EA"/>
+            </svg>
+          </div>
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow">About</p>
+          <h2>Hi, I&rsquo;m Jordan.</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Curabitur pretium tincidunt lacus. Nulla gravida orci a odio, nullam varius turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.</p>
+          <a class="btn" href="#contact">Let&rsquo;s talk</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container contact-grid">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Let&rsquo;s find your place.</h2>
+          <p class="muted">Tell me a little about what you&rsquo;re looking for and I&rsquo;ll get back to you within one business day.</p>
+          <ul class="contact-list">
+            <li><span class="label">Phone</span><a href="tel:+15195550142">(519) 555-0142</a></li>
+            <li><span class="label">Email</span><a href="mailto:hello@thong.example">hello@thong.example</a></li>
+            <li><span class="label">Office</span><span>123 Dundas St, London, ON</span></li>
+          </ul>
+        </div>
+
+        <form id="contact-form" class="card form" novalidate>
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required>
+            <p class="error" data-error-for="name"></p>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required>
+            <p class="error" data-error-for="email"></p>
+          </div>
+          <div class="field">
+            <label for="phone">Phone <span class="muted">(optional)</span></label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label for="message">How can I help?</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+            <p class="error" data-error-for="message"></p>
+          </div>
+          <button class="btn" type="submit">Send message</button>
+          <p id="form-status" class="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <strong class="footer-name">Jordan Ellis</strong>
+        <p>Realtor &middot; Your Brokerage Name, Brokerage</p>
+      </div>
+      <nav aria-label="Footer">
+        <ul>
+          <li><a href="#listings">Listings</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <p><a href="tel:+15195550142">(519) 555-0142</a><br><a href="mailto:hello@thong.example">hello@thong.example</a></p>
+    </div>
+    <p class="container copyright">&copy; <span id="year">2026</span> Jordan Ellis. All rights reserved.</p>
+  </footer>
+</body>
+</html>
